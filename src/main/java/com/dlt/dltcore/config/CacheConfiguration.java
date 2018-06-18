@@ -38,6 +38,21 @@ public class CacheConfiguration {
             cm.createCache(com.dlt.dltcore.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.dlt.dltcore.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.dlt.dltcore.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Discipline.class.getName(), jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Discipline.class.getName() + ".resources", jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Discipline.class.getName() + ".programs", jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Program.class.getName(), jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Program.class.getName() + ".resources", jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Program.class.getName() + ".courses", jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Program.class.getName() + ".disciplines", jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Course.class.getName(), jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Course.class.getName() + ".resources", jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Course.class.getName() + ".lessons", jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Course.class.getName() + ".programs", jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Lesson.class.getName(), jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Lesson.class.getName() + ".resources", jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Lesson.class.getName() + ".courses", jcacheConfiguration);
+            cm.createCache(com.dlt.dltcore.domain.Resource.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
