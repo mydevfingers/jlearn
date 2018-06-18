@@ -1,0 +1,48 @@
+
+<div *ngIf="course">
+    <h2><span jhiTranslate="jlearningApp.course.detail.title">Course</span> {{course.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jlearningApp.course.courseTitle">Course Title</span></dt>
+        <dd>
+            <span>{{course.courseTitle}}</span>
+        </dd>
+        <dt><span jhiTranslate="jlearningApp.course.courseDescription">Course Description</span></dt>
+        <dd>
+            <span>{{course.courseDescription}}</span>
+        </dd>
+        <dt><span jhiTranslate="jlearningApp.course.coursePrice">Course Price</span></dt>
+        <dd>
+            <span>{{course.coursePrice}}</span>
+        </dd>
+        <dt><span jhiTranslate="jlearningApp.course.courseDuration">Course Duration</span></dt>
+        <dd>
+            <span>{{course.courseDuration}}</span>
+        </dd>
+        <dt><span jhiTranslate="jlearningApp.course.courseLevel">Course Level</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jlearningApp.Level.' + course.courseLevel}}">{{course.courseLevel}}</span>
+        </dd>
+        <dt><span jhiTranslate="jlearningApp.course.lessons">Lessons</span></dt>
+        <dd>
+            <span *ngFor="let lessons of course.lessons; let last = last">
+                <a [routerLink]="['/lesson', lessons?.id ]">{{lessons.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'course/'+ course.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
